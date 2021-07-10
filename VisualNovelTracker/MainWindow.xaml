@@ -9,7 +9,11 @@
     <Grid Background="#FF1D1D1D">
         <TextBox x:Name="SearchBox" HorizontalAlignment="Left" Height="21" Margin="6,17,0,0" TextWrapping="Wrap" Text="Search" VerticalAlignment="Top" Width="158" FontFamily="Times New Roman" FontSize="16"/>
         <DataGrid x:Name="VNGrid" Margin="170,12,12.333,13.667"/>
-        <Button x:Name="ExitButton" Content="Exit" Margin="8,0,0,17.667" FontFamily="Times New Roman" FontSize="19" Click="ExitButton_Click" BorderBrush="White" Background="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}" Height="27" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="156"/>
+        <Button x:Name="ExitButton" Content="Exit" Margin="6,0,0,17.667" FontFamily="Times New Roman" FontSize="19" Click="ExitButton_Click" BorderBrush="White" Background="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}" Height="27" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="158"/>
+        <Button x:Name="AddVN" Content="Add VN" Margin="6,54,0,0" FontFamily="Times New Roman" FontSize="19" Click="AddButton_Click" BorderBrush="White" Background="#FF8FFF76" HorizontalAlignment="Left" Width="158" Height="27" VerticalAlignment="Top"/>
+        <Button x:Name="RemoveVN" Content="Remove VN" Margin="6,90,0,0" FontFamily="Times New Roman" FontSize="19" Click="RemoveButton_Click" BorderBrush="White" Background="#FFEF7171" HorizontalAlignment="Left" Width="158" Height="27" VerticalAlignment="Top"/>
+        <Button x:Name="EditVN" Content="Edit VN" Margin="6,126,0,0" FontFamily="Times New Roman" FontSize="19" Click="EditButton_Click" BorderBrush="White" Background="#FFFBFF8B" HorizontalAlignment="Left" Width="158" Height="27" VerticalAlignment="Top"/>
+        <Label x:Name="SelectedVNLabel" Content="Selected Visual Novel" HorizontalAlignment="Left" Margin="7,192,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Times New Roman" FontSize="16"/>
 
     </Grid>
 </Window>

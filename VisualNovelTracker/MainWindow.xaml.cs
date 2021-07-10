@@ -85,5 +85,20 @@ namespace VisualNovelTracker
         {
             System.Windows.Application.Current.Shutdown();
         }
+
+        // When the add button is clicked open the add window
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        // When the remove button is clicked remove the VN from the DB
+        private void RemoveButton_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        // When the edit button is clicked open the edit window
+        private void EditButton_Click(object sender, RoutedEventArgs e)
+        {
+        }
     }
 }
