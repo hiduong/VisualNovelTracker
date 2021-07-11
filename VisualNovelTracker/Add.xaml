@@ -5,8 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VisualNovelTracker"
         mc:Ignorable="d"
-        Title="Add Visual Novel" Height="720" Width="1280">
+        Title="Add Visual Novel" Height="700" Width="400" ResizeMode="NoResize">
     <Grid Background="#FF1D1D1D">
-        
+        <DatePicker x:Name="cDate" Margin="6,0,6.667,53" Background="White" FontFamily="Times New Roman" FontSize="20" Height="32" VerticalAlignment="Bottom"/>
+        <Label x:Name="TitleLabel" Content="Visual Novel Title" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" FontFamily="Times New Roman" FontSize="20"/>
+        <Button x:Name="AddButton" Content="Add Visual Novel to Collection" Margin="5,0,7.667,8" Background="#FF7DFEA3" FontFamily="Times New Roman" FontSize="20" Height="36" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="TitleBox" Height="26" Margin="6,37,6.667,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" FontFamily="Times New Roman"/>
+        <Label x:Name="cDateLabel" Content="Date Completed" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" FontFamily="Times New Roman" FontSize="20" Margin="0,548,0,0"/>
+        <Label x:Name="descriptionLabel" Content="Visual Novel Description" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" FontFamily="Times New Roman" FontSize="20" Margin="0,72,0,0"/>
+        <TextBox x:Name="descriptionBox" Height="172" Margin="6,108,6.667,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="15" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" AcceptsReturn="True"/>
+        <ComboBox x:Name="ScoreCB" Margin="5,319,6.667,0" VerticalAlignment="Top" Height="29" SelectionChanged="ScoreCB_SelectionChanged" FontFamily="Times New Roman" FontSize="20">
+            <ComboBoxItem x:Name="one" Content="1: Appalling" HorizontalAlignment="Left" Width="378.666666666667" FontFamily="Times New Roman"/>
+            <ComboBoxItem x:Name="two" Content="2: Horrible" HorizontalAlignment="Left" Width="378.666666666667"/>
+            <ComboBoxItem x:Name="three" Content="3: Very Bad" HorizontalAlignment="Left" Width="378.666666666667"/>
+            <ComboBoxItem x:Name="four" Content="4: Bad" HorizontalAlignment="Left" Width="378.666666666667"/>
+            <ComboBoxItem x:Name="five" Content="5: Average" HorizontalAlignment="Left" Width="378.666666666667"/>
+            <ComboBoxItem x:Name="six" Content="6: Fine" HorizontalAlignment="Left" Width="378.666666666667"/>
+            <ComboBoxItem x:Name="seven" Content="7: Good" HorizontalAlignment="Left" Width="378.666666666667"/>
+            <ComboBoxItem x:Name="eight" Content="8: Very Good" HorizontalAlignment="Left" Width="378.666666666667"/>
+            <ComboBoxItem x:Name="nine" Content="9: Great/Fantastic" HorizontalAlignment="Left" Width="378.666666666667"/>
+            <ComboBoxItem x:Name="ten" Content="10: Masterpiece" HorizontalAlignment="Left" Width="378.666666666667" IsSelected="True"/>
+        </ComboBox>
+        <Label x:Name="ScoreLabel" Content="User Score" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" FontFamily="Times New Roman" FontSize="20" Margin="0,286,0,0"/>
+        <Label x:Name="StatusLabel" Content="Status" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" FontFamily="Times New Roman" FontSize="20" Margin="0,352,0,0"/>
+        <ComboBox x:Name="StatusCB" Margin="5,386,6.667,0" VerticalAlignment="Top" Height="29" SelectionChanged="ScoreCB_SelectionChanged" FontFamily="Times New Roman" FontSize="20">
+            <ComboBoxItem x:Name="dropped" Content="Dropped" HorizontalAlignment="Left" Width="378.666666666667"/>
+            <ComboBoxItem x:Name="onhold" Content="On Hold" HorizontalAlignment="Left" Width="378.666666666667"/>
+            <ComboBoxItem x:Name="plantoplay" Content="Plan to Play" HorizontalAlignment="Left" Width="378.666666666667"/>
+            <ComboBoxItem x:Name="currentlyplaying" Content="Currently Playing" HorizontalAlignment="Left" Width="378.666666666667"/>
+            <ComboBoxItem x:Name="completed" Content="Completed" HorizontalAlignment="Left" Width="380" IsSelected="True"/>
+        </ComboBox>
+        <Label x:Name="TagsLabel" Content="Tags" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" FontFamily="Times New Roman" FontSize="20" Margin="0,419,0,0"/>
+        <TextBox x:Name="TagsBox" Height="26" Margin="6,453,6.667,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" FontFamily="Times New Roman"/>
+        <Label x:Name="Visual_Novel_Image" Content="Visual Novel Image" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" FontFamily="Times New Roman" FontSize="20" Margin="0,485,0,0"/>
+        <TextBox x:Name="ImageNameLabel" Height="26" Margin="6,520,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" FontFamily="Times New Roman" HorizontalAlignment="Left" Width="245"/>
+        <Button x:Name="UploadButton" Content="Upload" Margin="259,517,7.667,0" FontFamily="Times New Roman" FontSize="20" Background="#FFFF9494" Height="32" VerticalAlignment="Top" Click="UploadButton_Click"/>
     </Grid>
 </Window>

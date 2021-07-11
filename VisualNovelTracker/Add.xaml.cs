@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Microsoft.Win32;
 
 namespace VisualNovelTracker
 {
@@ -22,6 +23,20 @@ namespace VisualNovelTracker
         public Add()
         {
             InitializeComponent();
+        }
+
+        private void ScoreCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void UploadButton_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog fd = new OpenFileDialog();
+            if (fd.ShowDialog() == true)
+            {
+                ImageNameLabel.Text = fd.SafeFileName;
+            }
         }
     }
 }

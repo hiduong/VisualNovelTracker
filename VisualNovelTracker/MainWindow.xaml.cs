@@ -12,10 +12,12 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Npgsql;
+using MongoDB.Bson;
+using MongoDB.Driver;
 
 namespace VisualNovelTracker
 {
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -29,13 +31,6 @@ namespace VisualNovelTracker
             public string cdate { get; set; } // Date the VN was completed (Can be empty)
             public string status { get; set; } // Status of the VN (Dropped, Completed, On Hold, ETC)
             public int rating { get; set; } // User score for the VN
-        }
-         
-        // Method returns the connection string used to access the DB
-        // Replace the NULL for database and password to connect
-        private string buildConnectionString()
-        {
-            return "Host = localhost; Username = postgres; Database = NULL; password = NULL; timeout=360; commandTimeout=360";
         }
 
         public MainWindow()
@@ -80,6 +75,14 @@ namespace VisualNovelTracker
             VNGrid.Columns.Add(col5);
         }
 
+        private void LoadCollection()
+        {
+            var settings = MongoClientSettings.FromConnectionString("mongodb+srv://hduong122:<password>@cluster0.ozs0k.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+            var client = new MongoClient(settings);
+            var database = client.GetDatabase("test");
+
+        }
+
         // When the exit button is clicked close the application
         private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
@@ -89,6 +92,9 @@ namespace VisualNovelTracker
         // When the add button is clicked open the add window
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
+            var addWindow = new Add();
+            addWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            addWindow.ShowDialog();
         }
 
         // When the remove button is clicked remove the VN from the DB
@@ -99,6 +105,26 @@ namespace VisualNovelTracker
         // When the edit button is clicked open the edit window
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
+        }
+
+        // When the view button is clicked on open all the information about the VN
+        private void ViewButton_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        // Upload and change the BG of the application
+        private void ChangeBGButton_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        // Revert back to the default BG of the application
+        private void DefaultBGButton_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void descriptionBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
